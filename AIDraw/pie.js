@@ -1,8 +1,8 @@
 function sliceSize(dataNum, dataTotal) {
   return (dataNum / dataTotal) * 360;
 }
-function addSlice(sliceSize, chartElement, offset, sliceID, color) {
-  $(chartElement).append("<div class='slice "+sliceID+"'><span></span></div>");
+function addSlice(sliceSize, pieElement, offset, sliceID, color) {
+  $(pieElement).append("<div class='slice "+sliceID+"'><span></span></div>");
   var offset = offset - 1;
   var sizeRotation = -179 + sliceSize;
   $("."+sliceID).css({
@@ -13,17 +13,17 @@ function addSlice(sliceSize, chartElement, offset, sliceID, color) {
     "background-color": color
   });
 }
-function iterateSlices(sliceSize, chartElement, offset, dataCount, sliceCount, color) {
+function iterateSlices(sliceSize, pieElement, offset, dataCount, sliceCount, color) {
   var sliceID = "s"+dataCount+"-"+sliceCount;
   var maxSize = 179;
   if(sliceSize<=maxSize) {
-    addSlice(sliceSize, chartElement, offset, sliceID, color);
+    addSlice(sliceSize, pieElement, offset, sliceID, color);
   } else {
-    addSlice(maxSize, chartElement, offset, sliceID, color);
-    iterateSlices(sliceSize-maxSize, chartElement, offset+maxSize, dataCount, sliceCount+1, color);
+    addSlice(maxSize, pieElement, offset, sliceID, color);
+    iterateSlices(sliceSize-maxSize, pieElement, offset+maxSize, dataCount, sliceCount+1, color);
   }
 }
-function createchart(dataElement, chartElement) {
+function createPie(dataElement, pieElement) {
   var listData = [];
   $(dataElement+" span").each(function() {
     listData.push(Number($(this).html()));
@@ -38,7 +38,7 @@ function createchart(dataElement, chartElement) {
     "olivedrab",
     "orange",
     "tomato",
-    "crimson", 
+    "crimson",
     "purple",
     "turquoise",
     "forestgreen",
@@ -47,7 +47,7 @@ function createchart(dataElement, chartElement) {
   ];
   for(var i=0; i<listData.length; i++) {
     var size = sliceSize(listData[i], listTotal);
-    iterateSlices(size, chartElement, offset, i, 0, color[i]);
+    iterateSlices(size, pieElement, offset, i, 0, color[i]);
     $(dataElement+" li:nth-child("+(i+1)+")").css("border-color", color[i]);
     offset += size;
   }

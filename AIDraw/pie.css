@@ -6,17 +6,17 @@
   }
 }
 
-.chartID {
+.pieID {
   display: inline-block;
   vertical-align: top;
 }
-.chart {
+.pie {
   height: 200px;
   width: 200px;
   position: relative;
   margin: 0 30px 30px 0;
 }
-.chart::before {
+.pie::before {
   content: "";
   display: block;
   position: absolute;
@@ -28,7 +28,7 @@
   top: 50px;
   left: 50px;
 }
-.chart::after {
+.pie::after {
   content: "";
   display: block;
   width: 120px;
