@@ -34,9 +34,9 @@ function createPie(dataElement, pieElement) {
   }
   var offset = 0;
   var color = [
-    "palegreen",
-    "palegoldenrod",
-    "paleturquoise",
+    "lightcoral",
+    "mediumseagreen",
+    "beige",
     "tomato",
     "crimson",
     "purple",
