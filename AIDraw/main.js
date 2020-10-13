@@ -1,6 +1,4 @@
-/*
-variables
-*/
+//variables
 var model;
 var canvas;
 var classNames = [];
@@ -41,7 +39,7 @@ function setTable(top, probs) {
         let sym = document.getElementById('sym' + (i + 1))
         let prob = document.getElementById('prob' + (i + 1))
         sym.innerHTML = top[i]
-        prob.innerHTML = Math.round(probs[i] * 100, "%")
+        prob.innerHTML = Math.round(probs[i] * 100) + "%";
     }
     //create the pie
     createPie(".pieID.legend", ".pieID.pie");
@@ -234,10 +232,10 @@ function allowDrawing() {
     canvas.isDrawingMode = 1;
     document.getElementById('status').innerHTML = 'Model Loaded';
     $('button').prop('disabled', false);
-    var slider = document.getElementById('myRange');
-    slider.oninput = function() {
-        canvas.freeDrawingBrush.width = this.value;
-    };
+    // var slider = document.getElementById('myRange');
+    // slider.oninput = function() {
+    //     canvas.freeDrawingBrush.width = this.value;
+    // };
 }
 
 /*
