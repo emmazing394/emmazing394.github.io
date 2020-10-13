@@ -1,9 +1,4 @@
-body {
-  background-image: url("Light-Wood.jpg");
-  min-height: 100%;
-  min-width: 100%;
-  background-repeat: repeat-y;
-}
+
 
 .slider {
     -webkit-appearance: none;
