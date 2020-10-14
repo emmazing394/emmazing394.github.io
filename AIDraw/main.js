@@ -16,7 +16,7 @@ $(function() {
     canvas.backgroundColor = '#ffffff';
     canvas.isDrawingMode = 0;
     canvas.freeDrawingBrush.color = "black";
-    canvas.freeDrawingBrush.width = 5;
+    canvas.freeDrawingBrush.width = 10;
     canvas.renderAll();
     //setup listeners
     canvas.on('mouse:up', function(e) {
@@ -40,7 +40,7 @@ function setTable(top, probs) {
         let sym = document.getElementById('sym' + (i + 1))
         let prob = document.getElementById('prob' + (i + 1))
         sym.innerHTML = top[i]
-        prob.innerHTML = Math.round(probs[i] * 100)
+        prob.innerHTML = (Math.round(probs[i] * 100) + "%")
     }
     //create the pie
     createPie(".pieID.legend", ".pieID.pie");
