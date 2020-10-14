@@ -40,7 +40,7 @@ function setTable(top, probs) {
         let sym = document.getElementById('sym' + (i + 1))
         let prob = document.getElementById('prob' + (i + 1))
         sym.innerHTML = top[i]
-        prob.innerHTML = Math.round(probs[i] * 100) 
+        prob.innerHTML = Math.round(probs[i] * 100)
     }
     //create the pie
     createPie(".pieID.legend", ".pieID.pie");
@@ -142,7 +142,7 @@ load the class names
 */
 async function loadDict() {
     await $.ajax({
-        url: 'model2/classes.txt',
+        url: 'model3/classes.txt',
         dataType: 'text',
     }).done(success);
 }
@@ -214,7 +214,7 @@ load the model
 async function start() {
 
     //load the model
-    model = await tf.loadLayersModel('model2/model.json')
+    model = await tf.loadLayersModel('model3/model.json')
 
     //warm up
     model.predict(tf.zeros([1, 28, 28, 1]))
