@@ -142,7 +142,7 @@ load the class names
 */
 async function loadDict() {
     await $.ajax({
-        url: 'model3/classes.txt',
+        url: 'newmodel/classes.txt',
         dataType: 'text',
     }).done(success);
 }
@@ -214,7 +214,7 @@ load the model
 async function start() {
 
     //load the model
-    model = await tf.loadLayersModel('model3/model.json')
+    model = await tf.loadLayersModel('newmodel/model.json')
 
     //warm up
     model.predict(tf.zeros([1, 28, 28, 1]))

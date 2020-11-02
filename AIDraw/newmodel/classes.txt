@@ -1,0 +1,12 @@
+ant
+bat
+bee
+bird
+cat
+dog
+dolphin
+fish
+horse
+pig
+rabbit
+swan
