@@ -9,14 +9,14 @@ var OB = "Only Buy";
 
 //---------------------HTML cards-----------------------------
 const firstPart = `<div class="col">
-  <div class="card" style="max-width: 250px; text-align: center;">
+  <div class="card bg-dark" style="max-width: 250px; text-align: center;">
   <img src="`;
 
 const secondPart = `" class="card-img-top" alt="`;
 
 const thirdPart = `" style="max-height: 80%;">
 <div class="card-body">
-  <h5 class="card-title">`;
+  <h5 class="card-title text-light">`;
 
 const fourthPart =`</h5>
 <p class="card-text"><div class="btn-group" role="group"><button class="btn btn-warning btn-sm" style="pointer-events: none;"><b>IMDB: `;
@@ -24,16 +24,13 @@ const fourthPart =`</h5>
 const fifthPart = `/10</b></button><button class="btn btn-danger btn-sm" style="pointer-events: none;"><b>RT: `;
 
 const sixthPart = `</b></button></div> </p>
-<p class="card-text">Available at: <span class="badge `;
+<p class="card-text text-light">Available at: <span class="badge `;
 
 const finalPart = `</span></p>
 </div>
 </div>
 </div>
 `;
-//<button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
-//<span class="badge bg-warning text-dark">
-//<div class="btn-group" role="group" aria-label="...">...</div>
 
 //-------------------------list movies-------------------
 const light = [
@@ -50,7 +47,7 @@ const light = [
   {imdb: "tt0247638", streaming: D}, {imdb: "tt0457939", streaming: [N, V]},
   {imdb: "tt3470600", streaming: V}, {imdb: "tt8580274", streaming: N},
   {imdb: "tt0128853", streaming: V}, {imdb: "tt1289403", streaming: V},
-  {imdb: "tt0211915", streaming: OB},
+  {imdb: "tt0211915", streaming: OB}, {imdb: "tt1570728", streaming: V},
 ]
 
 const superhero = [
@@ -70,7 +67,10 @@ const musicals = [
 ];
 
 const cryFest = [
-  {imdb: "tt0816692", streaming: V}
+  {imdb: "tt0816692", streaming: V}, {imdb: "tt0102492", streaming: N},
+  {imdb: "tt4481414", streaming: D}, {imdb: "tt0388795", streaming: [N, V]},
+  {imdb: "tt0816442", streaming: D}, {imdb: "tt0281358", streaming: N},
+  {imdb: "tt0308644", streaming: V},
 ];
 
 function movies() {
