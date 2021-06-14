@@ -7,6 +7,12 @@ var VR = "Viaplay (Rent)";
 var H = "HBO";
 var OB = "Only Buy";
 
+//categories
+var SUPER = "SuperHeroes";
+var LIGHT = "Light";
+var MUSIC = "Musicals";
+var CRY = "Cry";
+
 //---------------------HTML cards-----------------------------
 const firstPart = `<div class="col">
   <div class="card bg-dark" style="max-width: 250px; text-align: center;">
@@ -33,48 +39,36 @@ const finalPart = `</span></p>
 `;
 
 //-------------------------list movies-------------------
-const light = [
-  {imdb: "tt6139732", streaming: D}, {imdb: "tt0356470", streaming: VR},
-  {imdb: "tt2771200", streaming: D}, {imdb: "tt0112697", streaming: [N, V]},
-  {imdb: "tt1661199", streaming: D}, {imdb: "tt0367594", streaming: [N, V]},
-  {imdb: "tt9214832", streaming: V}, {imdb: "tt7846844", streaming: N},
-  {imdb: "tt0316396", streaming: V}, {imdb: "tt0892318", streaming: N},
-  {imdb: "tt3281548", streaming: V}, {imdb: "tt1109624", streaming: [N, V]},
-  {imdb: "tt4468740", streaming: [N, V]}, {imdb: "tt0120783", streaming: D},
-  {imdb: "tt1024255", streaming: N}, {imdb: "tt1981677", streaming: N},
-  {imdb: "tt0117008", streaming: N}, {imdb: "tt0059742", streaming: D},
-  {imdb: "tt1485796", streaming: D}, {imdb: "tt0147800", streaming: D},
-  {imdb: "tt0247638", streaming: D}, {imdb: "tt0457939", streaming: [N, V]},
-  {imdb: "tt3470600", streaming: V}, {imdb: "tt8580274", streaming: N},
-  {imdb: "tt0128853", streaming: V}, {imdb: "tt1289403", streaming: V},
-  {imdb: "tt0211915", streaming: OB}, {imdb: "tt1570728", streaming: V},
-]
+const allMovies = [
+  {imdb: "tt6139732", streaming: D, category: LIGHT}, {imdb: "tt0356470", streaming: VR, category: LIGHT}, {imdb: "tt2771200", streaming: D, category: LIGHT},
+  {imdb: "tt0112697", streaming: [N, V], category: LIGHT}, {imdb: "tt1661199", streaming: D, category: LIGHT}, {imdb: "tt0367594", streaming: [N, V], category: LIGHT},
+  {imdb: "tt9214832", streaming: V, category: LIGHT}, {imdb: "tt7846844", streaming: N, category: LIGHT}, {imdb: "tt0316396", streaming: V, category: LIGHT},
+  {imdb: "tt0892318", streaming: N, category: LIGHT}, {imdb: "tt3281548", streaming: V, category: LIGHT}, {imdb: "tt1109624", streaming: [N, V], category: LIGHT},
+  {imdb: "tt4468740", streaming: [N, V], category: LIGHT}, {imdb: "tt0120783", streaming: D, category: LIGHT}, {imdb: "tt1024255", streaming: N, category: LIGHT},
+  {imdb: "tt1981677", streaming: N, category: LIGHT}, {imdb: "tt0117008", streaming: N, category: LIGHT}, {imdb: "tt0059742", streaming: D, category: LIGHT},
+  {imdb: "tt1485796", streaming: D, category: LIGHT}, {imdb: "tt0147800", streaming: D, category: LIGHT}, {imdb: "tt0247638", streaming: D, category: LIGHT},
+  {imdb: "tt0457939", streaming: [N, V], category: LIGHT}, {imdb: "tt3470600", streaming: V, category: LIGHT}, {imdb: "tt8580274", streaming: N, category: LIGHT},
+  {imdb: "tt0128853", streaming: V, category: LIGHT}, {imdb: "tt1289403", streaming: V, category: LIGHT}, {imdb: "tt0211915", streaming: OB, category: LIGHT},
+  {imdb: "tt1570728", streaming: V, category: LIGHT},
 
-const superhero = [
-  {imdb: "tt0478970", streaming: D}, {imdb: "tt5095030", streaming: D},
-  {imdb: "tt4154796", streaming: D}, {imdb: "tt4154756", streaming: D},
-  {imdb: "tt1825683", streaming: D}, {imdb: "tt0468569", streaming: D},
-  {imdb: "tt1211837", streaming: D}, {imdb: "tt6320628", streaming: N},
-  {imdb: "tt2250912", streaming: V}, {imdb: "tt3501632", streaming: D},
+  {imdb: "tt0478970", streaming: D, category: SUPER}, {imdb: "tt5095030", streaming: D, category: SUPER}, {imdb: "tt4154796", streaming: D, category: SUPER},
+  {imdb: "tt4154756", streaming: D, category: SUPER}, {imdb: "tt1825683", streaming: D, category: SUPER}, {imdb: "tt0468569", streaming: D, category: SUPER},
+  {imdb: "tt1211837", streaming: D, category: SUPER}, {imdb: "tt6320628", streaming: N, category: SUPER}, {imdb: "tt2250912", streaming: V, category: SUPER},
+  {imdb: "tt3501632", streaming: D, category: SUPER},
+
+  {imdb: "tt6139732", streaming: D, category: MUSIC}, {imdb: "tt2771200", streaming: D, category: MUSIC}, {imdb: "tt1485796", streaming: D, category: MUSIC},
+  {imdb: "tt3783958", streaming: VR, category: MUSIC}, {imdb: "tt0058331", streaming: D, category: MUSIC}, {imdb: "tt2077886", streaming: OB, category: MUSIC},
+  {imdb: "tt0059742", streaming: D, category: MUSIC}, {imdb: "tt1727824", streaming: VR, category: MUSIC}, {imdb: "tt2066051", streaming: N, category: MUSIC},
+  {imdb: "tt0795421", streaming: N, category: MUSIC},
+
+  {imdb: "tt0816692", streaming: V, category: CRY}, {imdb: "tt0102492", streaming: N, category: CRY}, {imdb: "tt4481414", streaming: D, category: CRY},
+  {imdb: "tt0388795", streaming: [N, V], category: CRY}, {imdb: "tt0816442", streaming: D, category: CRY}, {imdb: "tt0281358", streaming: N, category: CRY},
+  {imdb: "tt0308644", streaming: V, category: CRY},
 ];
 
-const musicals = [
-  {imdb: "tt6139732", streaming: D}, {imdb: "tt2771200", streaming: D},
-  {imdb: "tt1485796", streaming: D}, {imdb: "tt3783958", streaming: VR},
-  {imdb: "tt0058331", streaming: D}, {imdb: "tt2077886", streaming: OB},
-  {imdb: "tt0059742", streaming: D}, {imdb: "tt1727824", streaming: VR},
-  {imdb: "tt2066051", streaming: N}, {imdb: "tt0795421", streaming: N},
-];
-
-const cryFest = [
-  {imdb: "tt0816692", streaming: V}, {imdb: "tt0102492", streaming: N},
-  {imdb: "tt4481414", streaming: D}, {imdb: "tt0388795", streaming: [N, V]},
-  {imdb: "tt0816442", streaming: D}, {imdb: "tt0281358", streaming: N},
-  {imdb: "tt0308644", streaming: V},
-];
-
+//function
 function movies() {
-  $.each(light, function(_, value) {
+  $.each(allMovies, function(_, value) {
     var url = 'http://www.omdbapi.com/?i=' + value.imdb + '&apikey=20972512';
     $.getJSON(url, function(response){
 
@@ -86,44 +80,6 @@ function movies() {
       } else if (value.streaming == OB){ colorBox = `bg-light text-dark">`;
       } else { colorBox = `bg-success">`;}
 
-      document.getElementById("lightmovies").innerHTML +=
-      firstPart + response.Poster + secondPart + response.Title +
-      thirdPart + response.Title + fourthPart + response.imdbRating +
-      fifthPart + response.Ratings[1].Value + sixthPart + colorBox + value.streaming + finalPart;
-    });
-  });
-
-  $.each(superhero, function(_, value) {
-    var url = 'http://www.omdbapi.com/?i=' + value.imdb + '&apikey=20972512';
-    $.getJSON(url, function(response){
-
-      var colorBox;
-      if(value.streaming == N) { colorBox = `bg-danger">`;
-      } else if (value.streaming == D) { colorBox = `bg-info text-dark">`;
-      } else if (value.streaming == V || value.streaming == VR){ colorBox = `bg-secondary">`;
-      }else if (value.streaming == H){ colorBox = `bg-dark">`;
-      } else if (value.streaming == OB){ colorBox = `bg-light text-dark">`;
-      } else { colorBox = `bg-light text-dark">`;}
-
-      document.getElementById("superheroes").innerHTML +=
-      firstPart + response.Poster + secondPart + response.Title +
-      thirdPart + response.Title + fourthPart + response.imdbRating +
-      fifthPart + response.Ratings[1].Value + sixthPart + colorBox + value.streaming + finalPart;
-    });
-  });
-
-  $.each(musicals, function(_, value) {
-    var url = 'http://www.omdbapi.com/?i=' + value.imdb + '&apikey=20972512';
-    $.getJSON(url, function(response){
-
-      var colorBox;
-      if(value.streaming == N) { colorBox = `bg-danger">`;
-      } else if (value.streaming == D) { colorBox = `bg-info text-dark">`;
-      } else if (value.streaming == V || value.streaming == VR){colorBox = `bg-secondary">`;
-      } else if (value.streaming == H){ colorBox = `bg-dark">`;
-      } else if (value.streaming == OB){ colorBox = `bg-light text-dark">`;
-      } else { colorBox = `bg-light text-dark">`;}
-
       var rotten;
       if(response.Ratings[1] === undefined){
         rotten = "None";
@@ -131,36 +87,28 @@ function movies() {
         rotten = response.Ratings[1].Value;
       }
 
-      document.getElementById("bestmusicals").innerHTML +=
-      firstPart + response.Poster + secondPart + response.Title +
-      thirdPart + response.Title + fourthPart + response.imdbRating +
-      fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
-    });
-  });
-
-  $.each(cryFest, function(_, value) {
-    var url = 'http://www.omdbapi.com/?i=' + value.imdb + '&apikey=20972512';
-    $.getJSON(url, function(response){
-
-      var colorBox;
-      if(value.streaming == N) { colorBox = `bg-danger">`;
-      } else if (value.streaming == D) { colorBox = `bg-info text-dark">`;
-      } else if (value.streaming == V || value.streaming == VR){colorBox = `bg-secondary">`;
-      } else if (value.streaming == H){ colorBox = `bg-dark">`;
-      } else if (value.streaming == OB){ colorBox = `bg-light text-dark">`;
-      } else { colorBox = `bg-light text-dark">`;}
-
-      var rotten;
-      if(response.Ratings[1] === undefined){
-        rotten = "None";
-      } else {
-        rotten = response.Ratings[1].Value;
+      if(value.category == LIGHT) {
+        document.getElementById("lightmovies").innerHTML +=
+        firstPart + response.Poster + secondPart + response.Title +
+        thirdPart + response.Title + fourthPart + response.imdbRating +
+        fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
+      } else if (value.category == SUPER) {
+        document.getElementById("superheroes").innerHTML +=
+        firstPart + response.Poster + secondPart + response.Title +
+        thirdPart + response.Title + fourthPart + response.imdbRating +
+        fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
+      } else if (value.category == MUSIC) {
+        document.getElementById("bestmusicals").innerHTML +=
+        firstPart + response.Poster + secondPart + response.Title +
+        thirdPart + response.Title + fourthPart + response.imdbRating +
+        fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
+      } else if (value.category == CRY) {
+        document.getElementById("crymovies").innerHTML +=
+        firstPart + response.Poster + secondPart + response.Title +
+        thirdPart + response.Title + fourthPart + response.imdbRating +
+        fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
       }
 
-      document.getElementById("crymovies").innerHTML +=
-      firstPart + response.Poster + secondPart + response.Title +
-      thirdPart + response.Title + fourthPart + response.imdbRating +
-      fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
     });
   });
 }
