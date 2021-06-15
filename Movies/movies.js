@@ -5,13 +5,15 @@ var D = "Disney+";
 var V = "Viaplay";
 var VR = "Viaplay (Rent)";
 var H = "HBO";
-var OB = "Only Buy";
+var OB = "Unknown";
 
 //categories
 var SUPER = "SuperHeroes";
 var LIGHT = "Light";
 var MUSIC = "Musicals";
 var CRY = "Cry";
+var TOUCHING = "Touching";
+var LAUGH = "Laugh";
 
 //---------------------HTML cards-----------------------------
 const firstPart = `<div class="col">
@@ -64,9 +66,18 @@ const allMovies = [
   {imdb: "tt0816692", streaming: V, category: CRY}, {imdb: "tt0102492", streaming: N, category: CRY}, {imdb: "tt4481414", streaming: D, category: CRY},
   {imdb: "tt0388795", streaming: [N, V], category: CRY}, {imdb: "tt0816442", streaming: D, category: CRY}, {imdb: "tt0281358", streaming: N, category: CRY},
   {imdb: "tt0308644", streaming: V, category: CRY},
+
+  {imdb: "tt0105323", streaming: OB, category: TOUCHING}, {imdb: "tt4481414", streaming: D, category: TOUCHING}, {imdb: "tt2084970", streaming: H, category: TOUCHING},
+  {imdb: "tt0111161", streaming: VR, category: TOUCHING}, {imdb: "tt2543472", streaming: VR, category: TOUCHING}, {imdb: "tt0109830", streaming: N, category: TOUCHING},
+  {imdb: "tt0816442", streaming: D, category: TOUCHING}, {imdb: "tt6966692", streaming: VR, category: TOUCHING}, {imdb: "tt3741834", streaming: VR, category: TOUCHING},
+  {imdb: "tt0463998", streaming: N, category: TOUCHING},
+
+  {imdb: "tt9214832", streaming: V, category: LAUGH}, {imdb: "tt2584384", streaming: V, category: LAUGH}, {imdb: "tt3501632", streaming: D, category: LAUGH},
+  {imdb: "tt1570728", streaming: V, category: LAUGH}, {imdb: "tt2283362", streaming: V, category: LAUGH}, {imdb: "tt7975244", streaming: V, category: LAUGH},
+  {imdb: "tt6139732", streaming: D, category: LAUGH}, {imdb: "tt5095030", streaming: D, category: LAUGH}, {imdb: "tt0381707", streaming: N, category: LAUGH},
 ];
 
-//function
+//--------------------------------------------------------------------
 function movies() {
   $.each(allMovies, function(_, value) {
     var url = 'http://www.omdbapi.com/?i=' + value.imdb + '&apikey=20972512';
@@ -76,7 +87,7 @@ function movies() {
       if(value.streaming == N) { colorBox = `bg-danger">`;
       } else if (value.streaming == D) { colorBox = `bg-info text-dark">`;
       } else if (value.streaming == V || value.streaming == VR){ colorBox = `bg-secondary">`;
-      }else if (value.streaming == H){ colorBox = `bg-dark">`;
+      }else if (value.streaming == H){ colorBox = `bg-dark border border-light">`;
       } else if (value.streaming == OB){ colorBox = `bg-light text-dark">`;
       } else { colorBox = `bg-success">`;}
 
@@ -104,6 +115,16 @@ function movies() {
         fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
       } else if (value.category == CRY) {
         document.getElementById("crymovies").innerHTML +=
+        firstPart + response.Poster + secondPart + response.Title +
+        thirdPart + response.Title + fourthPart + response.imdbRating +
+        fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
+      } else if (value.category == TOUCHING) {
+        document.getElementById("touching").innerHTML +=
+        firstPart + response.Poster + secondPart + response.Title +
+        thirdPart + response.Title + fourthPart + response.imdbRating +
+        fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
+      } else if (value.category == LAUGH) {
+        document.getElementById("laughing").innerHTML +=
         firstPart + response.Poster + secondPart + response.Title +
         thirdPart + response.Title + fourthPart + response.imdbRating +
         fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
