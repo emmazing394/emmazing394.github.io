@@ -34,9 +34,9 @@ const fourthPart =`</h5>
 const fifthPart = `/10</b></button><button class="btn btn-danger btn-sm" style="pointer-events: none;"><b>RT: `;
 
 const sixthPart = `</b></button></div> </p>
-<p class="card-text text-dark">Available at: <span class="badge `;
+<p class="card-text text-dark">Available at: `;
 
-const finalPart = `</span></p>
+const finalPart = `</p>
 </div>
 </div>
 </div>
@@ -49,13 +49,42 @@ function movies() {
 
     $.getJSON(url, function(response){
 
+      var movie_info = firstPart + response.Poster + secondPart + response.Title +
+      thirdPart + response.Title + fourthPart + response.imdbRating +
+      fifthPart + rotten + sixthPart;
+
       var colorBox;
-      if(value.streaming == N) { colorBox = `bg-danger">`;
-      } else if (value.streaming == D) { colorBox = `bg-info text-dark">`;
-      } else if (value.streaming == V || value.streaming == VR){ colorBox = `bg-secondary">`;
-      }else if (value.streaming == H){ colorBox = `bg-dark border border-light">`;
-      } else if (value.streaming == OB){ colorBox = `bg-light text-dark">`;
-      } else { colorBox = `bg-success">`;}
+      //console.log(value.streaming);
+
+      $.each(value.streaming, function(i, val){
+        //console.log(response.Title, val);
+
+        colorBox = `<span class="badge `;
+        if(val == N) { 
+          colorBox += `bg-danger">`;
+        } 
+        else if (val == D) { 
+          colorBox += `bg-info text-dark">`;
+        } 
+        else if (val == V || val == VR){ 
+          colorBox += `bg-pink text-dark">`;
+        }
+        else if (val == H){ 
+          colorBox += `bg-dark border border-light">`;
+        } 
+        else if (val == OB){ 
+          colorBox += `bg-secondary">`;
+        } 
+        else { 
+          colorBox += `bg-success">`;
+        }
+
+        colorBox += val + `</span> `;
+        movie_info += colorBox;
+        //console.log(colorBox);
+      })
+
+      movie_info += finalPart;
 
       var rotten;
       if(response.Ratings[1] === undefined){
@@ -64,10 +93,8 @@ function movies() {
         rotten = response.Ratings[1].Value;
       }
 
-      var movie_info = firstPart + response.Poster + secondPart + response.Title +
-      thirdPart + response.Title + fourthPart + response.imdbRating +
-      fifthPart + rotten + sixthPart + colorBox + value.streaming + finalPart;
       //console.log(value.imdb, response.Title);
+      console.log(colorBox);
 
       $.each(value.category, function(index, cat){
         
