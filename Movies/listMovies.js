@@ -5,15 +5,15 @@ const allMovies = [
   {imdb: "tt0112697", streaming: [N, V], category: [LIGHT]}, //Clueless
   {imdb: "tt1661199", streaming: D, category: [LIGHT]}, //Cinderella
   {imdb: "tt0367594", streaming: [N, V], category: [LIGHT]}, //charlie and the chocolate factory
-  {imdb: "tt9214832", streaming: V, category: [LIGHT, LAUGH]}, //Emma
+  {imdb: "tt9214832", streaming: N, category: [LIGHT, LAUGH]}, //Emma
   {imdb: "tt7846844", streaming: N, category: [LIGHT]}, //Enola Holmes
   {imdb: "tt0316396", streaming: V, category: [LIGHT]}, //Peter pan
-  {imdb: "tt0892318", streaming: N, category: [LIGHT]}, //Letters to juliet
-  {imdb: "tt3281548", streaming: V, category: [LIGHT]}, //Little women
+  {imdb: "tt0892318", streaming: V, category: [LIGHT]}, //Letters to juliet
+  {imdb: "tt3281548", streaming: V0, category: [LIGHT]}, //Little women
   {imdb: "tt1109624", streaming: [N, V], category: [LIGHT]}, //paddington
   {imdb: "tt4468740", streaming: [N, V], category: [LIGHT]}, //paddington 2
   {imdb: "tt0120783", streaming: D, category: [LIGHT]}, //the parent trap
-  {imdb: "tt1024255", streaming: N, category: [LIGHT]}, //Wild child
+  {imdb: "tt1024255", streaming: OB, category: [LIGHT]}, //Wild child
   {imdb: "tt1981677", streaming: N, category: [LIGHT]}, //Pitch perfect
   {imdb: "tt0117008", streaming: N, category: [LIGHT]}, //Matilda
   {imdb: "tt0059742", streaming: D, category: [LIGHT, MUSIC]}, //the sound of music
@@ -55,12 +55,12 @@ const allMovies = [
   {imdb: "tt0109830", streaming: N, category: [TOUCHING]}, //Forrest Gump
   {imdb: "tt6966692", streaming: VR, category: [TOUCHING]}, //Green book
   {imdb: "tt3741834", streaming: VR, category: [TOUCHING]}, //Lion
-  {imdb: "tt2584384", streaming: V, category: [LAUGH]}, //Jojo Rabbit
+  {imdb: "tt2584384", streaming: D, category: [LAUGH]}, //Jojo Rabbit
   {imdb: "tt2283362", streaming: V, category: [LAUGH]}, //Jumanji welcome to the jungle
-  {imdb: "tt7975244", streaming: V, category: [LAUGH]}, //Jumanji the next level
-  {imdb: "tt0381707", streaming: N, category: [LAUGH]}, //White chicks
+  {imdb: "tt7975244", streaming: [N, V], category: [LAUGH]}, //Jumanji the next level
+  {imdb: "tt0381707", streaming: V, category: [LAUGH]}, //White chicks
   {imdb: "tt0482571", streaming: V, category: [PLOTTWIST, EPIC]}, //Prestige
-  {imdb: "tt2250912", streaming: V, category: [ACTION, PLOTTWIST]}, //spider-man homecoming
+  {imdb: "tt2250912", streaming: [N, V], category: [ACTION, PLOTTWIST]}, //spider-man homecoming
   {imdb: "tt2235695", streaming: N, category: [PLOTTWIST]}, //Rebecca
   {imdb: "tt6751668", streaming: OB, category: [PLOTTWIST, EPIC]}, //Parasite
   {imdb: "tt8721424", streaming: N, category: [MUSIC, LIGHT, CRY, TOUCHING]}, //Tick tick boom
