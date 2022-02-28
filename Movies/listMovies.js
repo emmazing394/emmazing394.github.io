@@ -9,7 +9,7 @@ const allMovies = [
   {imdb: "tt7846844", streaming: N, category: [LIGHT]}, //Enola Holmes
   {imdb: "tt0316396", streaming: V, category: [LIGHT]}, //Peter pan
   {imdb: "tt0892318", streaming: V, category: [LIGHT]}, //Letters to juliet
-  {imdb: "tt3281548", streaming: V0, category: [LIGHT]}, //Little women
+  {imdb: "tt3281548", streaming: V, category: [LIGHT]}, //Little women
   {imdb: "tt1109624", streaming: [N, V], category: [LIGHT]}, //paddington
   {imdb: "tt4468740", streaming: [N, V], category: [LIGHT]}, //paddington 2
   {imdb: "tt0120783", streaming: D, category: [LIGHT]}, //the parent trap
