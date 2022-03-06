@@ -48,6 +48,13 @@ function movies() {
     var url = 'http://www.omdbapi.com/?i=' + value.imdb + '&apikey=20972512';
 
     $.getJSON(url, function(response){
+      
+      var rotten;
+      if(response.Ratings[1] === undefined){
+        rotten = "None";
+      } else {
+        rotten = response.Ratings[1].Value;
+      }
 
       var movie_info = firstPart + response.Poster + secondPart + response.Title +
       thirdPart + response.Title + fourthPart + response.imdbRating +
@@ -85,13 +92,6 @@ function movies() {
       })
 
       movie_info += finalPart;
-
-      var rotten;
-      if(response.Ratings[1] === undefined){
-        rotten = "None";
-      } else {
-        rotten = response.Ratings[1].Value;
-      }
 
       //console.log(value.imdb, response.Title);
       console.log(colorBox);
