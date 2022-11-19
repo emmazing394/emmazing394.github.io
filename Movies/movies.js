@@ -16,34 +16,36 @@ var CRY = "Cry";
 var TOUCHING = "Touching";
 var LAUGH = "Laugh";
 var PLOTTWIST = "Plottwist";
+var LOVE = "Love";
 
-//---------------------HTML cards-----------------------------
-const firstPart = `<div class="col">
-  <div class="card bg-light" style="max-width: 250px; text-align: center;">
-  <img src="`;
+$(document).ready(function() {
+  //---------------------HTML cards-----------------------------
+  const firstPart = `<div class="col">
+    <div class="card bg-light" style="max-width: 250px; text-align: center;">
+    <img src="`;
 
-const secondPart = `" class="card-img-top" alt="`;
+  const secondPart = `" class="card-img-top" alt="`;
 
-const thirdPart = `" style="max-height: 80%;">
-<div class="card-body">
-  <h5 class="card-title text-dark">`;
+  const thirdPart = `" style="max-height: 80%;">
+  <div class="card-body">
+    <h5 class="card-title text-dark">`;
 
-const fourthPart =`</h5>
-<p class="card-text"><div class="btn-group" role="group"><button class="btn btn-warning btn-sm" style="pointer-events: none;"><b>IMDB: `;
+  const fourthPart =`</h5>
+  <p class="card-text"><div class="btn-group" role="group"><button class="btn btn-warning btn-sm" style="pointer-events: none;"><b>IMDB: `;
 
-const fifthPart = `/10</b></button><button class="btn btn-danger btn-sm" style="pointer-events: none;"><b>RT: `;
+  const fifthPart = `/10</b></button><button class="btn btn-danger btn-sm" style="pointer-events: none;"><b>RT: `;
 
-const sixthPart = `</b></button></div> </p>
-<p class="card-text text-dark">Available at: `;
+  const sixthPart = `</b></button></div> </p>
+  <p class="card-text text-dark">Available at: `;
 
-const finalPart = `</p>
-</div>
-</div>
-</div>
-`;
+  const finalPart = `</p>
+  </div>
+  </div>
+  </div>
+  `;
 
-//--------------------------------------------------------------------
-function movies() {
+  //--------------------------------------------------------------------
+
   $.each(allMovies, function(_, value) {
     var url = 'http://www.omdbapi.com/?i=' + value.imdb + '&apikey=20972512';
 
@@ -61,10 +63,8 @@ function movies() {
       fifthPart + rotten + sixthPart;
 
       var colorBox;
-      //console.log(value.streaming);
 
       $.each(value.streaming, function(i, val){
-        //console.log(response.Title, val);
 
         colorBox = `<span class="badge `;
         if(val == N) { 
@@ -88,13 +88,9 @@ function movies() {
 
         colorBox += val + `</span> `;
         movie_info += colorBox;
-        //console.log(colorBox);
       })
 
       movie_info += finalPart;
-
-      //console.log(value.imdb, response.Title);
-      console.log(colorBox);
 
       $.each(value.category, function(index, cat){
         
@@ -122,7 +118,16 @@ function movies() {
         else if (cat == EPIC) {
           document.getElementById("epic").innerHTML += movie_info;
         }
+        else if (cat == LOVE) {
+          document.getElementById("love").innerHTML += movie_info;
+        }
       });
     });
   });
-}
+
+
+  $(".nav-link").click(function() {
+    $('.offcanvas').offcanvas('hide');
+  })
+
+})

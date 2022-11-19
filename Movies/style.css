@@ -4,6 +4,7 @@ html {
 
 body {
   margin: 0;
+  color: white !important;
 }
 
 ul {
@@ -38,4 +39,7 @@ li a:hover:not(.active) {
 .bg-pink {
   
   background-color: #fc8da3;
+}
+.offcanvas-title {
+  color: rgb(37, 37, 37);
 }
